@@ -47,23 +47,23 @@ app.post("/add-user",(req,res)=>{
         name : username,
         phone : userphone
     })
-    User.findOne({username: newUser.username })
-   .then(existingUser => {
-    if (existingUser) {
-      return res.send('<script>alert("Sorry, but the user already exists Please try again with different user name"); window.location.href = "/Add-Users";</script>');
-    } else {
-      newUser.save()
-        .then(savedUser => {
-           console.log("user saved");
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    }
-  })
-  .catch(err => {
-    console.log(err);
-  });
+  //   User.findOne({username: newUser.username })
+  //  .then(existingUser => {
+  //   if (existingUser) {
+  //     return res.send('<script>alert("Sorry, but the user already exists Please try again with different user name"); window.location.href = "/Add-Users";</script>');
+  //   } else {
+  //     newUser.save()
+  //       .then(savedUser => {
+  //          console.log("user saved");
+  //       })
+  //       .catch(err => {
+  //         console.log(err);
+  //       });
+  //   }
+  // })
+  // .catch(err => {
+  //   console.log(err);
+  // });
 
   const distinct_id = usermail; 
   const user = supr_client.user.get_instance(distinct_id)
